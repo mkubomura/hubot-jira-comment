@@ -31,8 +31,8 @@ module.exports = (robot) ->
           content:
             mrkdwn_in: ['text']
             fallback: "#{issue}, Comment: #{body.comment.body}"
+            color: "#91afb0"
             text: "<#{url}|#{issue}>\n*#{body.comment.author.displayName}:* <#{process.env.HUBOT_JIRA_URL}/secure/AddComment!default.jspa?id=#{body.issue.id}|Reply>\n```#{body.comment.body}```"
-            color: '91afb0'
 
       if body.changelog
         for item in body.changelog.items
@@ -42,8 +42,8 @@ module.exports = (robot) ->
               content:
                 mrkdwn_in: ['text']
                 fallback: "#{issue}, Status: #{item.fromString} -> #{item.toString}"
+                color: "#91afb0"
                 text: "<#{url}|#{issue}>\n*Status Change*\n#{item.fromString} -> #{item.toString}"
-                color: '91afb0'
 
     res.send 'OK'
 

@@ -1,6 +1,6 @@
 {
     "name" : "hubot-jira-comment",
-    "version" : "0.1.6",
+    "version" : "0.1.7",
     "description" : "Hubot forwards Jira comments to Slack",
     "keywords" : [
         "hubot",
