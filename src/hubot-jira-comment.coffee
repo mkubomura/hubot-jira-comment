@@ -15,10 +15,6 @@ cription:
 #
 # Replaced with https://gist.github.com/scott2449/e22c8d07951f59354052
 
-# colors = ->
-#  status: '2fa4e7'
-#  comment: '91afb0'
-
 statuscolor = '2fa4e7'
 commentcolor = '91afb0'
 
