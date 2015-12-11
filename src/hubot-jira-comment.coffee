@@ -1,4 +1,4 @@
-cription:
+# Description:
 #   Forward Jira comments to Slack.
 #
 # Dependencies:
