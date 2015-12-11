@@ -15,9 +15,12 @@ cription:
 #
 # Replaced with https://gist.github.com/scott2449/e22c8d07951f59354052
 
-colors = ->
-  status: '2fa4e7'
-  comment: '91afb0'
+# colors = ->
+#  status: '2fa4e7'
+#  comment: '91afb0'
+
+statuscolor = '2fa4e7'
+commentcolor = '91afb0'
 
 module.exports = (robot) ->
   robot.router.post '/hubot/chat-jira-comment/:room', (req, res) ->
@@ -36,7 +39,7 @@ module.exports = (robot) ->
             mrkdwn_in: ['text']
             fallback: "#{issue}, Comment: #{body.comment.body}"
             text: "<#{url}|#{issue}>\n*#{body.comment.author.displayName}:* <#{process.env.HUBOT_JIRA_URL}/secure/AddComment!default.jspa?id=#{body.issue.id}|Reply>\n```#{body.comment.body}```"
-            color: colors.comment
+            color: commentcolor
 
       if body.changelog
         for item in body.changelog.items
@@ -47,7 +50,7 @@ module.exports = (robot) ->
                 mrkdwn_in: ['text']
                 fallback: "#{issue}, Status: #{item.fromString} -> #{item.toString}"
                 text: "<#{url}|#{issue}>\n*Status Change*\n#{item.fromString} -> #{item.toString}"
-                color: colors.comment
+                color: commentcolor
 
     res.send 'OK'
 
