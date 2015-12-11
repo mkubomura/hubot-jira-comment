@@ -1,19 +1,13 @@
 # Description:
-#   Forward Jira comments to Slack.
-#
+#   Forward Jira comments to Slack
 # Dependencies:
 #   None
-#
 # Configuration:
 #   HUBOT_JIRA_URL
-#
 # Commands:
 #   None
-#
-# Author:
-#   mnpk <mnncat@gmail.com>
-#
-# Replaced with https://gist.github.com/scott2449/e22c8d07951f59354052
+# Auther:
+#   mnpk
 
 module.exports = (robot) ->
   robot.router.post '/hubot/chat-jira-comment/:room', (req, res) ->
